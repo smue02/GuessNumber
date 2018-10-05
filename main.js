@@ -13,21 +13,22 @@ from there.*/
 const input = require('readline-sync');
 
 
-var name;
+var name = readline.question('What is your name?');
 console.log('Hello! Welcome to guess the number game. What is your name?')
 console.log(name);
-console.log('Hello ' + name "!");
+console.log('Hello ' + name + "!");
 var Number = 20;
 var counter = 0;
 MaxTries= 6;
 var RandomNumber = Math.floor(Math.random() * Number) + 1;
 while (Attempts !== RandomNumber) {
-    var Attempts = prompt("Please guess a number between 1 and " + Number);
+    var Attempts = readline.question("Please guess a number between 1 and " + Number);
+    //var Attempts = readline.question('hey?');
     counter += 1;
 if (Attempts == RandomNumber) {
         document.write("You guessed correctly. You won!");
-        document.write("<p> The correct number was " + RandomNumber "</p>")
-        document.write("<p> It took you " + counter " attempts to get the correct number");
+        document.write("<p> The correct number was " + RandomNumber, "</p>")
+        document.write("<p> It took you " + counter, " attempts to get the correct number");
         document.wrtie("To play again enter 'y' (yes) or 'n' (no)");
     }
     if (counter > MaxTries) {
@@ -39,8 +40,8 @@ if (Attempts == RandomNumber) {
         counter++;
         document.write("Sorry! Your guess is too high, try again");
     }
-    else () {
-        counter++
+    else {
+        counter++;
         document.write("Sorry! Your number is too low, try again.");
     }
 }
